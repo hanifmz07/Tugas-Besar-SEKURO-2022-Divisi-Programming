@@ -3,6 +3,8 @@
 #include "Damage.hpp"
 #include "Player.hpp"
 
+using namespace std;
+
 Player::Player(const char* name){
     this->name = name;
     this->health = 100;
@@ -11,37 +13,37 @@ Player::Player(const char* name){
 }
 
 void Player::display(){
-    std::cout << "\nName\t: " << this->name << std::endl;
-    std::cout << "Health\t: " << this->health << std::endl;
-    std::cout << "Power\t: "<< this->damage->getPower() << std::endl;
-    //std::cout << "Kills\t: " << this->count << std::endl;
+    cout << "\nName\t: " << this->name << endl;
+    cout << "Health\t: " << this->health << endl;
+    cout << "Power\t: "<< this->damage->getPower() << endl;
+    //cout << "Kills\t: " << this->count << endl;
 }
 
 void Player::attack(Player* player){
     int choice; 
     while(this->health > 0){
-        std::cout << "\nMau serang atau maju?" << std::endl;
-        std::cout << "Serang (ketik 1)" << std::endl;
-        std::cout << "Maju (ketik 2)" << std::endl;
+        cout << "\nMau serang atau maju?" << endl;
+        cout << "Serang (ketik 1)" << endl;
+        cout << "Maju (ketik 2)" << endl;
         if(player->health <= 0){
             this->count += 1;
-            std::cout << player->name << " meninggal" << std::endl;
+            cout << player->name << " meninggal" << endl;
 
             // disini isi sama fungsi random bunshin lagi
         }
-        std::cin >> choice;
+        cin >> choice;
         if (choice == 1){
-            std::cout << std::endl << this->name << " menyerang " << player->getName() << std::endl;
+            cout << endl << this->name << " menyerang " << player->getName() << endl;
             player->defence(this->damage->getPower());
-            std::cout << "\nName\t: " << player->getName() << std::endl;
-            std::cout << "Health\t: " << player->health << std::endl;
-            std::cout << "Power\t: "<< player->damage->getPower() << std::endl;
+            cout << "\nName\t: " << player->getName() << endl;
+            cout << "Health\t: " << player->health << endl;
+            cout << "Power\t: "<< player->damage->getPower() << endl;
 
-            std::cout << std::endl << player->getName() << " menyerang " << this->name << std::endl;
+            cout << endl << player->getName() << " menyerang " << this->name << endl;
             this->defence(player->damage->getPower());
-            std::cout << "\nName\t: " << this->name << std::endl;
-            std::cout << "Health\t: " << this->health << std::endl;
-            std::cout << "Power\t: "<< this->damage->getPower() << std::endl;
+            cout << "\nName\t: " << this->name << endl;
+            cout << "Health\t: " << this->health << endl;
+            cout << "Power\t: "<< this->damage->getPower() << endl;
         }
 
         /*
@@ -50,16 +52,16 @@ void Player::attack(Player* player){
 
         }
         else{
-            std::cout << "Input tidak sesuai" << std::endl;
+            cout << "Input tidak sesuai" << endl;
         }
         */
     }
-    std::cout << this->name << " meninggal" << std::endl;
-    std::cout << "Kills\t:  " << this->count << std::endl;
+    cout << this->name << " meninggal" << endl;
+    cout << "Kills\t:  " << this->count << endl;
 }
 
 //getter
-std::string Player::getName(){
+string Player::getName(){
     return this->name;
 }
 
@@ -75,6 +77,6 @@ double Player::getHealth(){
 void Player::defence(double damage){
     if(this->health > 0){
         this->health -= damage;
-        std::cout << this->name << " mendapatkan damage : " << damage << std::endl;
+        cout << this->name << " mendapatkan damage : " << damage << endl;
     }
 }

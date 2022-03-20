@@ -10,6 +10,8 @@
 <p>&nbsp;</p>
 
 ## Cara Menjalankan Program
+Directory dari program utama berada di folder tubes_uro_final.
+
 Cara run program (ini dilakukan di terminal vscode):
 1. Pada terminal, atur directory agar sama dengan directory source code
 2. Ketik g++ main.cpp functions.cpp -o main.exe pada terminal

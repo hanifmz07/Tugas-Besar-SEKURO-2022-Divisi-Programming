@@ -38,3 +38,5 @@ Ketika bunshin berhasil dikalahkan oleh robot, akan muncul bunshin lain di koord
 
 Program akan berhenti ketika user memilih nomor 3 saat memilih apa yang akan dilakukan atau ketika Health robot sudah habis (mencapai 0).
 Ketika program akan berhenti, program akan menampilkan terlebih dahulu berapa jumlah bunshin yang berhasil dibunuh. Kemudian baru program akan berakhir.
+
+Link github: https://github.com/hanifmz07/Tugas-Besar-SEKURO-2022-Divisi-Programming

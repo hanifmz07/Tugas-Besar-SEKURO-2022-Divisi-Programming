@@ -4,8 +4,13 @@
 #include <ctime>
 #include <cmath>
 #include "classes.hpp"
-
+#include <stdlib.h>
 using namespace std;
+
+#include <bits/stdc++.h>
+using namespace std;
+  
+void fun(void) { cout << "Exiting"; }
 
 Point initRange(){
     srand(time(0));
@@ -96,6 +101,7 @@ int main(int argc, char const *argv[])
         cout << "\nMau serang atau jalan?" << endl;
         cout << "Serang (ketik 1)" << endl;
         cout << "Jalan (ketik 2)" << endl;
+        cout << "Exit Program (ketik 3)" << endl;
         
         while (true) {
             cin >> choice;
@@ -117,6 +123,10 @@ int main(int argc, char const *argv[])
             } else if (choice == 2) {
                 pointerR->moveRobot(pointerMK->coor);
                 break;
+            } else if (choice == 3) {
+                atexit(fun);
+                cout << "Jumlah bunshin yang telah dibunuh: " << pointerR->count << endl;
+                _Exit(10);
             } else {
                 cout << "Input salah, mohon melakukan input kembali." << endl;
             }
@@ -136,13 +146,13 @@ int main(int argc, char const *argv[])
                 pointerR->health = 0;
                 cout << "Health Robot: " << pointerR->health << endl;
                 cout << endl;
+                cout << "Robot telah hancur dengan cara terhormat...\n";
                 break;
             }
             cout << "Health Robot: " << pointerR->health << endl;
             cout << endl;
         }
     }
-    cout << "Robot telah hancur dengan cara terhormat...\n";
     cout << "Jumlah bunshin yang telah dibunuh: " << pointerR->count << endl;
     return 0;
 }

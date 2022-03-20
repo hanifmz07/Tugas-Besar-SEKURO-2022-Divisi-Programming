@@ -31,7 +31,6 @@ class Robot {
 // Fungsi menggerakkan robot
 void Robot::moveRobot(int direction)
 {
-    // mengecek posisi robot benar atau tidak
     if (direction == 1) // Maju
     {
         position[0][0] ++;
@@ -49,6 +48,7 @@ void Robot::moveRobot(int direction)
         position[0][1] ++;
     }
 
+    // mengecek posisi robot benar atau tidak
     for (int j = 0; j < 2; j++)
     {
         if (position[0][j] < 0 or position[0][j] > 9)

@@ -20,23 +20,5 @@ int main(int argc, char const *argv[])
 
     robot->attack(kurama);
     
-    /*
-    kurama->attack(robot);
-    robot->display();
-    kurama->display();
-    */  
-    
-    //robot->repeat();
-    //robot->getChoice(kurama);
-/*
-    robot->attack(kurama);
-    kurama->attack(robot);
-    robot->display();
-    kurama->display();
-    robot->attack(kurama);
-    kurama->attack(robot);
-    robot->display();
-    kurama->display();
-*/
     return 0;
 }
